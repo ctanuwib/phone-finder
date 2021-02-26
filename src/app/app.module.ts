@@ -9,6 +9,8 @@ import { FilterPipe } from './pipe/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [AppComponent, FilterPipe],
@@ -20,6 +22,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatCardModule,
     MatExpansionModule,
     MatCheckboxModule,
+    MatIconModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
