@@ -4,7 +4,7 @@
       <div class="row">
         <input
           type="text"
-          class="w-100"
+          class="w-100 mx-3"
           placeholder="Search Phone"
           [(ngModel)]="searchInput"
         />
@@ -56,15 +56,19 @@
           class="col-6 py-2"
           *ngFor="let phone of phones | filter: searchInput"
         >
-          <mat-card>
+          <mat-card
+          [ngClass]="{'samsung': phone.brand == 'Samsung',
+          'lg': phone.brand == 'LG',
+          'xiaomi': phone.brand == 'Xiaomi',
+          'apple': phone.brand == 'Apple'}" >
             <mat-card-header>
               <mat-card-title>{{ phone.name }}</mat-card-title>
             </mat-card-header>
-            <mat-card-content>
+            <mat-card-content class="">
               <p>{{ phone.description }}</p>
-              <br />
-              <p>Brand {{ phone.brand }}</p>
-              <p>Brand {{ phone.release_year }}</p>
+              <!-- Find a way so brand and year would stick to bottom of the card -->
+              <p><strong>Brand :</strong>  {{ phone.brand }}</p>
+              <p><strong>Year :</strong> {{ phone.release_year }}</p>
             </mat-card-content>
           </mat-card>
         </div>
